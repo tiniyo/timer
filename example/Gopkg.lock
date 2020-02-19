@@ -29,7 +29,7 @@
   branch = "master"
   name = "github.com/tiniyo/timer"
   packages = ["."]
-  revision = "10a8f3d22ecc67e149bf1b583cfad3029b16116c"
+  revision = "0ed3a1afa33a9a5cf39c95aad04c708a958243b3"
 
 [solve-meta]
   analyzer-name = "dep"
