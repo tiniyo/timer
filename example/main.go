@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"math/rand"
 	"sync"
 
 	timer "github.com/tiniyo/timer"
@@ -16,16 +16,20 @@ type testTimerData struct {
 var wg sync.WaitGroup
 
 func testTimerCallbackHandler(data interface{}) error {
-	fmt.Println("testTimerCallbackHandler : ", data.(testTimerData).message)
+	//fmt.Println("testTimerCallbackHandler : ", data.(testTimerData).message)
 	wg.Done()
 	return nil
 }
 
 func main() {
-	wg.Add(1)
 	testTimer.InitializeTiniyoTimer(testTimerCallbackHandler)
 	testTimer.Run()
-	testTimer.StartTimer(30, "1234", testTimerData{message: "This is test"})
-	// testTimer.CancelTimer("1234")
+	min := 1
+	max := 5
+	wg.Add(1)
+	for i := 0; i < 1000000; i++ {
+		testTimer.StartTimer(uint64(rand.Intn(max-min)+min), string(i), testTimerData{message: "This is test"})
+		wg.Add(1)
+	}
 	wg.Wait()
 }
