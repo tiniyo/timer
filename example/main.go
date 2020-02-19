@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"sync"
+
+	timer "github.com/tiniyo/timer"
 )
 
-var testTimer TiniyoTimer
+var testTimer timer.TiniyoTimer
 
 type testTimerData struct {
 	message string

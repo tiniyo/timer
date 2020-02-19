@@ -1,4 +1,4 @@
-package main
+package timer
 
 import (
 	timer "github.com/singchia/go-timer"
