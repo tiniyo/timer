@@ -25,9 +25,15 @@
   packages = ["."]
   revision = "6e9052456016bd526a98011d0f2085d16b8f07fe"
 
+[[projects]]
+  branch = "master"
+  name = "github.com/tiniyo/timer"
+  packages = ["."]
+  revision = "10a8f3d22ecc67e149bf1b583cfad3029b16116c"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5238a1807c1adc4a5973ed0a92aba35c3571116de11a35fa7cc6992650f76adf"
+  inputs-digest = "51a463dbd52e445039af9ac5ce15813f0f3dbd064a3774e94e0472342873279e"
   solver-name = "gps-cdcl"
   solver-version = 1

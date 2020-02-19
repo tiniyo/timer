@@ -43,9 +43,9 @@ func (this *TiniyoTimer) Run() {
 	}()
 }
 
-func (tt *TiniyoTimer) StartTimer(timerid string, data interface{}) error {
+func (tt *TiniyoTimer) StartTimer(t uint64, timerid string, data interface{}) error {
 	tdata := timerdata{timer_id: timerid, data: data}
-	t1, err := tt.t.Time(5, tdata, tt.ch, nil)
+	t1, err := tt.t.Time(t, tdata, tt.ch, nil)
 	if err != nil {
 		return err
 	}

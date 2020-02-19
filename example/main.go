@@ -25,7 +25,7 @@ func main() {
 	wg.Add(1)
 	testTimer.InitializeTiniyoTimer(testTimerCallbackHandler)
 	testTimer.Run()
-	testTimer.StartTimer("1234", testTimerData{message: "This is test"})
+	testTimer.StartTimer(30, "1234", testTimerData{message: "This is test"})
 	// testTimer.CancelTimer("1234")
 	wg.Wait()
 }
