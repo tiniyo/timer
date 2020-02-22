@@ -55,8 +55,10 @@ func (tt *TiniyoTimer) StartTimer(t uint64, timerid string, data interface{}) er
 }
 
 func (tt *TiniyoTimer) CancelTimer(timerid string) {
-	timerobj, _ := tt.m.Load(timerid)
-	timerobj.(timer.Tick).Cancel()
-	/* remove from map */
-	tt.m.Delete(timerid)
+	timerobj, ispresent := tt.m.Load(timerid)
+	if ispresent {
+		timerobj.(timer.Tick).Cancel()
+		/* remove from map */
+		tt.m.Delete(timerid)
+	}
 }
